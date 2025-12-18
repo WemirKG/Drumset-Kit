@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <title>AuraPro Drum Kit</title>
+  <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <div class="kicker">AuraPro Ads • Studio Toy</div>
+      <div class="title">Virtual Drum Kit</div>
+      <div class="sub">Tap pads or press keys. Sign in to save add-ons.</div>
+    </div>
+
+    <div class="auth">
+      <div class="user" id="userLine">Not signed in</div>
+      <div class="authBtns">
+        <button class="btn primary" id="btnSignIn">Sign in with Google</button>
+        <button class="btn" id="btnSignOut" disabled>Sign out</button>
+      </div>
+      <div class="tiny">Google-only sign-in (one account per Google email).</div>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="panel">
+      <div class="panelHead">
+        <div class="panelTitle">Controls</div>
+        <div class="panelHint">Keys: A S D F J K L ;</div>
+      </div>
+
+      <div class="panelBody">
+        <div class="row">
+          <button class="btn" id="btnEnableAudio">Enable Audio</button>
+          <button class="btn primary" id="btnRecord">Record</button>
+          <button class="btn" id="btnPlay">Play</button>
+          <button class="btn" id="btnClear">Clear</button>
+        </div>
+
+        <div class="row">
+          <label class="toggle">
+            <input type="checkbox" id="metronome"/>
+            <span>Click</span>
+          </label>
+
+          <label class="toggle">
+            <input type="checkbox" id="quantize" disabled/>
+            <span>Quantize (Add-on)</span>
+          </label>
+
+          <label class="toggle">
+            <input type="checkbox" id="fx" disabled/>
+            <span>Studio FX (Add-on)</span>
+          </label>
+        </div>
+
+        <div class="log" id="log">Ready.</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panelHead">
+        <div class="panelTitle">Pads</div>
+        <div class="panelHint">Mobile-first • low-latency</div>
+      </div>
+      <div class="panelBody">
+        <div class="pads" id="pads"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panelHead">
+        <div class="panelTitle">Add-ons ($5 each)</div>
+        <div class="panelHint">Unlocks are tied to your Google account</div>
+      </div>
+
+      <div class="panelBody">
+        <div class="addons">
+          <div class="addon">
+            <div class="addonTitle">Quantize Mode</div>
+            <div class="addonDesc">Snaps your recorded hits to a musical grid for tighter beats.</div>
+            <button class="btn" id="buyQuantize">Request Unlock ($5)</button>
+          </div>
+
+          <div class="addon">
+            <div class="addonTitle">Studio FX</div>
+            <div class="addonDesc">Adds subtle compressor + ambience for a “finished” sound.</div>
+            <button class="btn" id="buyFx">Request Unlock ($5)</button>
+          </div>
+
+          <div class="addon">
+            <div class="addonTitle">Premium Kit Pack</div>
+            <div class="addonDesc">Extra sounds + alternate mapping (future expansion).</div>
+            <button class="btn" id="buyKit" disabled title="Stubbed for future pack">Coming soon</button>
+          </div>
+        </div>
+
+        <div class="tiny">
+          For now, “Request Unlock” copies a message you can paste into email/DM. Later, you can automate unlocks with Stripe webhooks.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- App code -->
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
